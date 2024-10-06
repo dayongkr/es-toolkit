@@ -33,9 +33,9 @@ jobs:
             changed_files=$(git diff --name-only --diff-filter=ACMRUXB origin/main)
 
             if echo "$changed_files" | grep -q "^eslint.config.mjs$"; then
-              yarn lint
+              yarn lint --quiet
             else
-              echo "$changed_files" | grep -E "(.js$|.ts$)" | xargs -r yarn lint
+              echo "$changed_files" | grep -E "(.js$|.ts$)" | xargs -r yarn lint --quiet
             fi
       - run:
           name: Prettier
