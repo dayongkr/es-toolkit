@@ -1,5 +1,53 @@
 # es-toolkit Changelog
 
+## Version v1.50.0
+
+Released on July 18th, 2026.
+
+- Added `flow` to `es-toolkit/fp`, a reusable function composition built on
+  `pipe`. ([#1812])
+- Fixed `unzipWith` to return an empty array instead of throwing on empty
+  input. ([#1816])
+- Fixed `deburr` to remove all combining diacritical marks, matching Lodash.
+  ([#1807])
+- Fixed the standalone `es-toolkit/compat/eq` and
+  `es-toolkit/compat/templateSettings` entry points, which could not be
+  imported, and made the build verify that every compat entry point is
+  loadable. ([#1895])
+- Fixed `compat/maxBy` and `compat/minBy` to restore Lodash-compatible
+  comparison behavior. ([#1893])
+- Fixed `compat/includes` to exclude the `length` property when matching
+  array-like values. ([#1886])
+- Fixed `compat/values` to treat sparse array holes as `undefined`. ([#1894])
+- Fixed compat string functions to count size and padding by code points for
+  multi-byte characters. ([#1852], [#1853])
+- Fixed compat case functions to match Lodash when splitting ordinal numbers.
+  ([#1836])
+- Fixed `compat/toArray` to convert Sets to arrays like Lodash. ([#1840])
+- Fixed `compat/inRange` to not throw on a lone negative bound. ([#1835])
+- Fixed `compat/nth` to support string inputs. ([#1833])
+- Fixed `compat/lastIndexOf`, `compat/findIndex`, and `compat/findLastIndex`
+  to coerce `fromIndex` like Lodash. ([#1828], [#1832], [#1834])
+- Fixed `compat/has`, `compat/hasIn`, and `compat/unset` to prioritize literal
+  keys over deep paths, and improved deep key detection. ([#1621], [#1808],
+  [#1810])
+- Fixed `compat/invokeMap` to normalize string paths when binding `this`.
+  ([#1814])
+- Fixed `compat/flattenDepth` to own its flattening logic instead of
+  delegating to `flatten`. ([#1847])
+- Improved JSDoc and type accuracy across compat functions. ([#1820], [#1822],
+  [#1823], [#1826], [#1829], [#1830], [#1845])
+- Documented individual compat entry points like `es-toolkit/compat/merge`,
+  and explained why `es-toolkit/fp` is fast. ([#1819], [#1896])
+- Improved documentation accuracy across references in all languages.
+  ([#1806], [#1821], [#1831], [#1843], [#1848], [#1850], [#1856], [#1876],
+  [#1888], [#1889])
+
+We sincerely thank @Antoliny0919, @BangDori, @bel1c10ud, @chatman-media,
+@chuenchen309, @D-Sketon, @dayongkr, @greymoth-jp, @hong4rc, @mayur-shenoy,
+@ramong26, @raon0211, @sarathfrancis90, @spokodev, and @sukvvon for their
+contributions. We appreciate your great efforts!
+
 ## Version v1.49.0
 
 Released on June 26th, 2026.
